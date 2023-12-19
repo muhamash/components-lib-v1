@@ -1,0 +1,49 @@
+.pending{
+    background-color: #EDF1F7;
+    color: #545F71;
+    font-size: '13px';
+    font-weight: 600;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.07)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));
+}
+
+.pending:hover{
+    background-color: #054F9F;
+    color: #E4E8EF !important;
+    border: #01070e 1px solid !important;
+}
+
+.completed{
+    background-color: #EDF1F7;
+    color: #545F71;
+    font-size: '13px';
+    font-weight: 600;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.07)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));
+}
+
+.completed:hover{
+    background-color: #259660;
+    color: #E4E8EF !important;
+    border: #1d7b4e 1px solid !important;
+}
+
+.not-completed{
+    background-color: #EDF1F7;
+    color: #545F71;
+    font-size: '13px';
+    font-weight: 600;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.07)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));
+}
+
+.not-completed:hover{
+    background-color: #fcfcfc !important;
+    color: #535353 !important;
+    border: #E4E8EF 1px solid !important;
+}
+
+.default{
+    background-color: #EDF1F7;
+    color: #545F71;
+    font-size: '13px';
+    font-weight: 600;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.07)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));
+}
