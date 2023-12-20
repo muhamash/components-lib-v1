@@ -4,8 +4,15 @@ import { Card } from "antd";
 import React from "react";
 import CustomDropdown from "./dropdown";
 
-const CalibrationStateCard = () =>
+interface CalibrationStateCardProps{
+    title: string;
+    amount: Number;
+    element: string;
+}
+
+const CalibrationStateCard = (props: CalibrationStateCardProps) =>
 {
+    const { title, amount, element } = props;
     return (
         <div>
             <Card
@@ -26,7 +33,7 @@ const CalibrationStateCard = () =>
                                 fontSize: '14px',
                                 lineHeight: '22px'
                             }}
-                        >PENDING CALIBRATION</div>
+                        >{ title }</div>
                         <div>
                             <CustomDropdown dropdownTitle={"This Year"} />
                         </div>
@@ -51,14 +58,14 @@ const CalibrationStateCard = () =>
                                     fontWeight: 800,
 
                             }}
-                            >26</div>
+                            >{amount}</div>
                             <div
                                 style={{
                                     color: '#545F71',
                                     fontSize: '20px',
                                     fontWeight: 700
                             }}
-                            >Sensors</div>
+                            >{element}</div>
                         </div>
                         <div>states</div>
                     </div>

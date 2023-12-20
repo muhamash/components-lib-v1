@@ -50,7 +50,7 @@ const page = () =>
                 CustomDate={currentDate}
                 width="350px"
                 />
-            <CalibrationStateCard/>
+            <CalibrationStateCard title={"Calibration Title"} amount={30} element={"Nextjs"}/>
         </div>
     )
 
