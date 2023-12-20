@@ -1,10 +1,11 @@
 'use client'
 
 import React from 'react';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import { Avatar, Badge, Card } from 'antd';
+import { Avatar, Badge, Card, Divider, Space } from 'antd';
 import styled from 'styled-components';
 import CalibrationCardButton from './button';
+import CustomTooltip from './customTooltip';
+
 
 
 const { Meta } = Card;
@@ -29,6 +30,7 @@ interface Users
     Avatar: string,
     id: string,
     name: string,
+    status: string,
 }
 
 
@@ -39,19 +41,28 @@ interface CalibrationCardProps
     CardDescription: string,
     CustomDate: string,
     width: string,
-    users?: Users[],
-
-}
+    users: {
+        name: string;
+        id: string;
+        image: string;
+    } [],
+};
 
 const CalibrationCard = ( props: CalibrationCardProps ) =>
 {
-    const { CardTitle, CardDescription, CustomDate, width, users = []} = props;
+    const { CardTitle, CardDescription, CustomDate, width, users=[]} = props;
 
     const renderAvatars = () =>
     {
         if ( users.length == 0 )
         {
-          return undefined   
+            return (
+                <CustomTooltip placement='bottom' title={
+                    <div>no user</div>
+                }>
+                    <div></div>
+              </CustomTooltip>
+          )  
         }
         else if ( users.length === 1 )
         {
@@ -66,7 +77,7 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                             width: '20px',
                             height: '20px'
                         }}
-                        src={users[ 0 ].Avatar} />
+                        src={users[ 0 ].image} />
                     <div
                         style={{
                             marginLeft: '5px'
@@ -90,7 +101,7 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                             width: '20px',
                             height: '20px'
                         }}
-                        src={user.Avatar} />
+                        src={user.image} />
                 </div>
             ) );
         }
@@ -100,50 +111,63 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
             const remainingCount = users.length - 3;
             // alert(remainingCount)
             const displayUsers = users.slice( 0, 3 );
+            const renderUsers = () =>
+            {
+                return users.map( ( user, index ) => (
+                    <div
+                        key={index}>
+                        <div style={{
+                            display: 'flex',
+                            gap: '10px',
+                            padding: '2px'
+
+                        }}>
+                            <div>
+                                <Avatar src={user.image} size={20} />
+                            </div>
+                            <div>
+                                {user.name}
+                            </div>
+                        </div>
+                    </div>
+                ) );
+            };
             // alert(displayUsers)
 
             return (
-                <div>
-                    {displayUsers.map( ( user ) => (
-                        <div
-                            key={user.id}
-                            style={{
-                                display: 'inline-block',
+                <CustomTooltip
+                    placement='bottom'
+                    title={renderUsers()}
+                >
+                    <div>
+                        {displayUsers.map( ( user ) => (
+                            <div
+                                key={user.id}
+                                style={{
+                                    display: 'inline-block',
                 
-                            }}>
-                            <Avatar
-                                style={{
-                                    width: '20px',
-                                    height: '20px'
-                                }}
-                                src={user.Avatar} />
-                            {/* <div
-                                style={{
-                                    textAlign: 'center',
-                                    fontSize: '12px'
                                 }}>
-                                {user.name}
-                            </div> */}
-                        </div>
-                    ) )}
-                    <Badge
-                        count={remainingCount}
-                        overflowCount={3}
-                        style={{
-                            // marginLeft: '5px',
-                            // padding: '5px',
-                            fontSize: '11px',
-                            backgroundColor: '#1A374D',
-                            borderRadius: '50%'
-                        }}>
-                        <Avatar
+                                <Avatar
+                                    style={{
+                                        width: '20px',
+                                        height: '20px'
+                                    }}
+                                    src={user.image} />
+                            </div>
+                        ) )}
+                        <Badge
+                            count={remainingCount}
+                            overflowCount={3}
                             style={{
-                                width: '20px',
-                                height: '20px'
-                            }}
-                            src={''} />
-                    </Badge>
-                </div>
+                                // marginLeft: '5px',
+                                // padding: '5px',
+                                fontSize: '11px',
+                                backgroundColor: '#1A374D',
+                                borderRadius: '50%'
+                            }}>
+                        </Badge>
+                    </div>
+                </CustomTooltip>
             );
         }
     };
@@ -171,15 +195,8 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                                 padding: '0px 10px'
                             }}>
                             <div>
-                                {/* <Avatar style={{
-                                    width: '20px',
-                                    height: '20px'
-                                }} src='user?' /> */}
                                 {renderAvatars()}
                             </div>
-                            {/* <div>
-                                ashraful
-                            </div> */}
                         </div>
                     </span>,
                     <span
@@ -208,7 +225,7 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                     title={CardTitle}
                     description={CardDescription}
                 />
-                <CalibrationCardButton title='Start Calibration' status='completed' />
+                <CalibrationCardButton title='Start Calibration' status='' />
             </Card>
         </div>
     );
