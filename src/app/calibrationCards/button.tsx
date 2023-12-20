@@ -14,18 +14,7 @@ interface CustomButton
 }
 const CustomButton = (props: CustomButton) =>
 {
-    const getButtonClass = () => {
-    switch (status) {
-      case 'completed':
-        return 'completed';
-      case 'pending':
-        return 'pending';
-      case 'not-completed':
-        return 'not-completed';
-      default:
-        return 'default';
-    }
-  };
+    
 
     const { title, icon, status } = props;
     const [ size, setSize ] = useState<SizeType>( "middle" );
@@ -35,8 +24,9 @@ const CustomButton = (props: CustomButton) =>
             style={{
                 padding: '20px 0px 0px 0px',
             }}>
-            <Button
-                className={getButtonClass()}
+        <Button
+            style={{}}
+                className={status}
                 icon={icon}
                 size={size}>
                 {title}

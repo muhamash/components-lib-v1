@@ -1,33 +1,39 @@
-import CalibrationCard from "../cards/page";
+import CalibrationCard from "../calibrationCards/page";
+import CalibrationStateCard from "../calibrationStatesCards/page";
 
 const users = [
     {
         name: "muktar",
         id: "1",
-        image: "/user.jpg"
+        image: "/user.jpg",
+        status: 'pending',
     },
 
     {
         name: "ashraful",
         id: "2",
-        image: "/user.jpg"
+        image: "/user.jpg",
+        status: 'completed',
     },
     {
         name: "rifat",
         id: "3",
-        image: "/user.jpg"
+        image: "/user.jpg",
+        status: 'completed',
     },
 
     {
         name: "siam",
         id: "4",
-        image: "/user.jpg"
+        image: "/user.jpg",
+        status: 'completed',
     },
 
     {
         name: "rakib",
         id: "4",
-        image: "/user.jpg"
+        image: "/user.jpg",
+        status: 'completed',
     },
 ]
 
@@ -36,7 +42,7 @@ const page = () =>
     const currentDate = new Date().toLocaleDateString();
 
     return (
-        <div>
+        <div className="flex gap-10 justify-center items-center py-10">
             <CalibrationCard
                 users={users}
                 CardTitle={"MIKRON UCP 600"}
@@ -44,7 +50,7 @@ const page = () =>
                 CustomDate={currentDate}
                 width="350px"
                 />
-                
+            <CalibrationStateCard/>
         </div>
     )
 

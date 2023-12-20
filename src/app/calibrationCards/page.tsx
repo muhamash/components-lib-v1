@@ -5,6 +5,7 @@ import { Avatar, Badge, Card, Divider, Space } from 'antd';
 import styled from 'styled-components';
 import CalibrationCardButton from './button';
 import CustomTooltip from './customTooltip';
+import './customCard.css';
 
 
 
@@ -45,6 +46,7 @@ interface CalibrationCardProps
         name: string;
         id: string;
         image: string;
+        status: string;
     } [],
 };
 
@@ -68,21 +70,16 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
         {
             return (
                 <div
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center'
-                    }}>
+                    className='customUserImageContainer'    
+                >
                     <Avatar
-                        style={{
-                            width: '20px',
-                            height: '20px'
-                        }}
+                        className='customUserImage'
                         src={users[ 0 ].image} />
                     <div
-                        style={{
-                            marginLeft: '5px'
-                        }}>
-                        {users[ 0 ].name}</div>
+                        className='customUser'    
+                    >
+                        {users[ 0 ].name}
+                    </div>
                 </div>
             );
         }
@@ -93,14 +90,11 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                 <div
                     key={user.id}
                     style={{
-                        display: 'inline-block',
-                        transform: 'translateX(-2px)',
+                        // display: 'inline-block',
+                        transform: 'translateX(2px)',
                     }}>
                     <Avatar
-                        style={{
-                            width: '20px',
-                            height: '20px'
-                        }}
+                        className='customUserImage'
                         src={user.image} />
                 </div>
             ) );
@@ -145,12 +139,13 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                                 key={user.id}
                                 style={{
                                     display: 'inline-block',
+                                    transform: 'translateX(8px)'
                 
                                 }}>
                                 <Avatar
                                     style={{
                                         width: '20px',
-                                        height: '20px'
+                                        height: '20px',
                                     }}
                                     src={user.image} />
                             </div>
@@ -173,11 +168,7 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
     };
 
     return (
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            padding: '20px'
-        }}>
+        <div>
             <Card
                 hoverable
                 style={{ width: width }}
@@ -193,7 +184,9 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                                 gap: '5px',
                                 justifyContent: 'flex-start',
                                 padding: '0px 10px'
-                            }}>
+                            }}
+                            // className='customCardUser'
+                        >
                             <div>
                                 {renderAvatars()}
                             </div>
@@ -225,7 +218,7 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                     title={CardTitle}
                     description={CardDescription}
                 />
-                <CalibrationCardButton title='Start Calibration' status='' />
+                <CalibrationCardButton title='Start Calibration' status={users[3].status} />
             </Card>
         </div>
     );
