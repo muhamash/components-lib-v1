@@ -1,0 +1,33 @@
+.titleHead{
+    background: #C19420;
+    color: aliceblue;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 10px black;
+    box-shadow: 2px 8px 12px -5px #C19420, 1px 4px 6px -6px #C19420;
+}
+
+.groupTitle{
+    color: #22222B;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.emailCounter{
+    color: #545F71;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.emailCardDate{
+    color: #7A828E;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.emailCardAddButton{
+    font-size: 20px;
+    color: #054F9F;
+}

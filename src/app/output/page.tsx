@@ -1,5 +1,7 @@
 import CalibrationCard from "../calibrationCards/page";
 import CalibrationStateCard from "../calibrationStatesCards/page";
+import EmailCard from "../emailCards/page";
+import EmailCards from "../emailCards/page";
 
 const users = [
     {
@@ -50,7 +52,8 @@ const page = () =>
                 CustomDate={currentDate}
                 width="350px"
                 />
-            <CalibrationStateCard title={"Calibration Title"} amount={30} element={"Nextjs"}/>
+            <CalibrationStateCard title={"Calibration Title"} amount={30} element={"Nextjs"} />
+            <EmailCard head={"E"} title={"Executive Directors"} emailCount={'30 Emails'} date={currentDate}/>
         </div>
     )
 
