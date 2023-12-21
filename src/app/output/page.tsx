@@ -11,32 +11,32 @@ const users = [
         status: 'pending',
     },
 
-    {
-        name: "ashraful",
-        id: "2",
-        image: "/user.jpg",
-        status: 'completed',
-    },
-    {
-        name: "rifat",
-        id: "3",
-        image: "/user.jpg",
-        status: 'completed',
-    },
+    // {
+    //     name: "ashraful",
+    //     id: "2",
+    //     image: "/user.jpg",
+    //     status: 'completed',
+    // },
+    // {
+    //     name: "rifat",
+    //     id: "3",
+    //     image: "/user.jpg",
+    //     status: 'completed',
+    // },
 
-    {
-        name: "siam",
-        id: "4",
-        image: "/user.jpg",
-        status: 'completed',
-    },
+    // {
+    //     name: "siam",
+    //     id: "4",
+    //     image: "/user.jpg",
+    //     status: 'completed',
+    // },
 
-    {
-        name: "rakib",
-        id: "4",
-        image: "/user.jpg",
-        status: 'completed',
-    },
+    // {
+    //     name: "rakib",
+    //     id: "4",
+    //     image: "/user.jpg",
+    //     status: 'completed',
+    // },
 ]
 
 const page = () =>
@@ -53,7 +53,7 @@ const page = () =>
                 width="350px"
                 />
             <CalibrationStateCard title={"Calibration Title"} amount={30} element={"Nextjs"} />
-            <EmailCard head={"E"} title={"Executive Directors"} emailCount={'30 Emails'} date={currentDate}/>
+            <EmailCard head={"E"} title={"Executive Directors"} emailCount={'30 Emails'} date={currentDate} users={users}/>
         </div>
     )
 

@@ -2,11 +2,11 @@
 
 import { Card } from "antd";
 import React from "react";
-import CustomDropdown from "./dropdown";
+import CustomDropdown from "../../components/dropdown";
 
 interface CalibrationStateCardProps{
     title: string;
-    amount: Number;
+    amount: React.ReactNode;
     element: string;
 }
 

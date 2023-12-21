@@ -1,11 +1,11 @@
 'use client'
 
 import React from 'react';
-import { Avatar, Badge, Card, Divider, Space } from 'antd';
+import {  Card, } from 'antd';
 import styled from 'styled-components';
-import CalibrationCardButton from './button';
-import CustomTooltip from './customTooltip';
+import CalibrationCardButton from '../../components/button';
 import './customCard.css';
+import ReadUser from '@/components/readUser';
 
 
 
@@ -26,16 +26,6 @@ const CardData = styled( Meta )`
   }
 `;
 
-interface Users
-{
-    Avatar: string,
-    id: string,
-    name: string,
-    status: string,
-}
-
-
-
 interface CalibrationCardProps
 {
     CardTitle: string,
@@ -53,119 +43,6 @@ interface CalibrationCardProps
 const CalibrationCard = ( props: CalibrationCardProps ) =>
 {
     const { CardTitle, CardDescription, CustomDate, width, users=[]} = props;
-
-    const renderAvatars = () =>
-    {
-        if ( users.length == 0 )
-        {
-            return (
-                <CustomTooltip placement='bottom' title={
-                    <div>no user</div>
-                }>
-                    <div></div>
-              </CustomTooltip>
-          )  
-        }
-        else if ( users.length === 1 )
-        {
-            return (
-                <div
-                    className='customUserImageContainer'    
-                >
-                    <Avatar
-                        className='customUserImage'
-                        src={users[ 0 ].image} />
-                    <div
-                        className='customUser'    
-                    >
-                        {users[ 0 ].name}
-                    </div>
-                </div>
-            );
-        }
-        
-        else if ( users.length === 2 )
-        {
-            return users.map( ( user ) => (
-                <div
-                    key={user.id}
-                    style={{
-                        // display: 'inline-block',
-                        transform: 'translateX(2px)',
-                    }}>
-                    <Avatar
-                        className='customUserImage'
-                        src={user.image} />
-                </div>
-            ) );
-        }
-            
-        else
-        {
-            const remainingCount = users.length - 3;
-            // alert(remainingCount)
-            const displayUsers = users.slice( 0, 3 );
-            const renderUsers = () =>
-            {
-                return users.map( ( user, index ) => (
-                    <div
-                        key={index}>
-                        <div style={{
-                            display: 'flex',
-                            gap: '10px',
-                            padding: '2px'
-
-                        }}>
-                            <div>
-                                <Avatar src={user.image} size={20} />
-                            </div>
-                            <div>
-                                {user.name}
-                            </div>
-                        </div>
-                    </div>
-                ) );
-            };
-            // alert(displayUsers)
-
-            return (
-                <CustomTooltip
-                    placement='bottom'
-                    title={renderUsers()}
-                >
-                    <div>
-                        {displayUsers.map( ( user ) => (
-                            <div
-                                key={user.id}
-                                style={{
-                                    display: 'inline-block',
-                                    transform: 'translateX(8px)'
-                
-                                }}>
-                                <Avatar
-                                    style={{
-                                        width: '20px',
-                                        height: '20px',
-                                    }}
-                                    src={user.image} />
-                            </div>
-                        ) )}
-                        <Badge
-                            count={remainingCount}
-                            overflowCount={3}
-                            style={{
-                                // marginLeft: '5px',
-                                // padding: '5px',
-                                fontSize: '11px',
-                                backgroundColor: '#1A374D',
-                                borderRadius: '50%'
-                            }}>
-                        </Badge>
-                    </div>
-                </CustomTooltip>
-            );
-        }
-    };
 
     return (
         <div>
@@ -188,7 +65,7 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                             // className='customCardUser'
                         >
                             <div>
-                                {renderAvatars()}
+                                <ReadUser users={users}/>
                             </div>
                         </div>
                     </span>,
@@ -218,7 +95,7 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                     title={CardTitle}
                     description={CardDescription}
                 />
-                <CalibrationCardButton title='Start Calibration' status={users[3].status} />
+                <CalibrationCardButton title='Start Calibration' status={users[0]?.status} />
             </Card>
         </div>
     );
