@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import CalibrationCardButton from '../../components/button';
 import './customCard.css';
 import ReadUser from '@/components/readUser';
+import { AlertOutlined } from '@ant-design/icons';
 
 
 
@@ -95,7 +96,7 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                     title={CardTitle}
                     description={CardDescription}
                 />
-                <CalibrationCardButton title='Start Calibration' status={users[0]?.status} />
+                <CalibrationCardButton title='Start Calibration' status={users[ 0 ]?.status} icon={ <AlertOutlined />} />
             </Card>
         </div>
     );

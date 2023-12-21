@@ -8,7 +8,7 @@ import type { SizeType } from "antd/es/config-provider/SizeContext";
 interface CustomButton
 {
     title: string,
-    icon?: React.ReactNode,
+    icon?: React.ReactElement,
     status?: string,
 }
 const CustomButton = (props: CustomButton) =>
@@ -24,7 +24,10 @@ const CustomButton = (props: CustomButton) =>
                 padding: '20px 0px 0px 0px',
             }}>
         <Button
-            style={{}}
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+            }}
                 className={status}
                 icon={icon}
                 size={size}>
