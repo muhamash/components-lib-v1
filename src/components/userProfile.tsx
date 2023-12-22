@@ -23,7 +23,7 @@ const AvatarContainer = styled.div`
 
 const UserProfile = ( props: ReadUserProps ) =>
 {
-    const { users } = props;
+    const { users=[] } = props;
     const renderTooltipContent = () => {
         if (users.length === 0) {
             return <div>No users</div>;
@@ -56,14 +56,22 @@ const UserProfile = ( props: ReadUserProps ) =>
         <CustomTooltip placement="bottom" title={renderTooltipContent()}>
             <div>
                 {users.length === 1 ? (
-                    <AvatarContainer>
-                        <Avatar
+                    <AvatarContainer
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '6px'
+                    }}
+                    >
+                        <div>
+                            <Avatar
                             style={{
                                 width: '22px',
                                 height: '22px',
                             }}
                             src={users[0].image}
                         />
+                        </div>
                         {users[0].name && (
                             <div
                                 style={{

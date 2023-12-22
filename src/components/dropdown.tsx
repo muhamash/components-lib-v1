@@ -5,7 +5,7 @@ import { Dropdown, Space } from "antd";
 
 interface DropDownProps
 {
-    dropdownTitle: string;
+  dropdownTitle: string;
 }
 
 const items: MenuProps["items"] = [

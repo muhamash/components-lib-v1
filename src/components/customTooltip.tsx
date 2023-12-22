@@ -1,8 +1,6 @@
-
-
 import React from "react";
 import { Tooltip } from "antd";
-import { Content } from "next/font/google";
+// import { Content } from "next/font/google";
 
 interface CustomTooltipProps {
     title?:React.ReactNode;

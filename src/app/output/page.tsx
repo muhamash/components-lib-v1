@@ -12,18 +12,18 @@ const users = [
         status: 'pending',
     },
 
-    {
-        name: "ashraful",
-        id: "2",
-        image: "/user.jpg",
-        status: 'completed',
-    },
-    {
-        name: "rifat",
-        id: "3",
-        image: "/user.jpg",
-        status: 'completed',
-    },
+    // {
+    //     name: "ashraful",
+    //     id: "2",
+    //     image: "/user.jpg",
+    //     status: 'completed',
+    // },
+    // {
+    //     name: "rifat",
+    //     id: "3",
+    //     image: "/user.jpg",
+    //     status: 'completed',
+    // },
 
     // {
     //     name: "siam",
