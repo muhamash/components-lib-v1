@@ -78,7 +78,7 @@ const ReadUser = ( props: ReadUserProps ) =>
         } else
         {
             const displayUsers = users.slice( 0, 3 );
-            const remainingCount = users.length - 3;
+            const remainingCount = users.length > 2 ? users.length - 3 : 0;
 
             return (
                 <CustomTooltip placement='bottom' title={renderTooltipContent()}>

@@ -7,6 +7,7 @@ import CalibrationCardButton from '../../components/button';
 import './customCard.css';
 import ReadUser from '@/components/readUser';
 import { AlertOutlined } from '@ant-design/icons';
+import UserProfile from '@/components/userProfile';
 
 
 
@@ -33,7 +34,7 @@ interface CalibrationCardProps
     CardDescription: string,
     CustomDate: string,
     width: string,
-    users: {
+    users?: {
         name: string;
         id: string;
         image: string;
@@ -43,7 +44,7 @@ interface CalibrationCardProps
 
 const CalibrationCard = ( props: CalibrationCardProps ) =>
 {
-    const { CardTitle, CardDescription, CustomDate, width, users=[]} = props;
+    const { CardTitle, CardDescription, CustomDate, width, users = [] } = props;
 
     return (
         <div>
@@ -66,10 +67,11 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                             // className='customCardUser'
                         >
                             <div>
-                                <ReadUser users={users}/>
+                                <UserProfile users={users}/>
                             </div>
                         </div>
                     </span>,
+                    
                     <span
                         key={'date'}
                         style={{
