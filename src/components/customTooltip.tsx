@@ -1,6 +1,7 @@
+'use client'
+
 import React from "react";
 import { Tooltip } from "antd";
-// import { Content } from "next/font/google";
 
 interface CustomTooltipProps {
     title?:React.ReactNode;
@@ -11,6 +12,7 @@ interface CustomTooltipProps {
 const CustomToolTip = (props: CustomTooltipProps) =>
 {
     const { title, children, placement } = props;
+    console.log({props})
     return (
         <div>
             <Tooltip

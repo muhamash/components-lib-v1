@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar, Badge } from 'antd';
 import styled from 'styled-components';
 import CustomTooltip from './customTooltip';
+import UserAvatar from './userAvatar';
 
 interface User {
     image: string;
@@ -82,7 +83,7 @@ const ReadUser = ( props: ReadUserProps ) =>
 
             return (
                 <CustomTooltip placement='bottom' title={renderTooltipContent()}>
-                    <div>
+                    {/* <div>
                         {displayUsers.map( ( user, index ) => (
                             <AvatarContainer key={index}>
                                 <Avatar
@@ -103,6 +104,9 @@ const ReadUser = ( props: ReadUserProps ) =>
                                 borderRadius: '50%',
                             }}
                         />
+                    </div> */}
+                    <div>
+                        <UserAvatar users={users}/>
                     </div>
                 </CustomTooltip>
             );

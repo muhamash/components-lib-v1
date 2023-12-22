@@ -1,13 +1,13 @@
 'use client'
 
 import React from 'react';
-import {  Card, } from 'antd';
+import {  Card, Space, } from 'antd';
 import styled from 'styled-components';
 import CalibrationCardButton from '../../components/button';
 import './customCard.css';
-import ReadUser from '@/components/readUser';
 import { AlertOutlined } from '@ant-design/icons';
-import UserProfile from '@/components/userProfile';
+// import UserProfile from '@/components/userStack';
+import UserStack from '@/components/userStack';
 
 
 
@@ -66,12 +66,17 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                             }}
                             // className='customCardUser'
                         >
-                            <div>
-                                <UserProfile users={users}/>
+                            <Space
+                                align='center'
+                                size={'large'}
+                            >
+                                <div>
+                                <UserStack  users={users}/>
                             </div>
+                            </Space>
                         </div>
                     </span>,
-                    
+
                     <span
                         key={'date'}
                         style={{
