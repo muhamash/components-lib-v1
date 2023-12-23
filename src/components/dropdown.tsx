@@ -1,11 +1,12 @@
 import React from "react";
 import { DownOutlined } from "@ant-design/icons";
-import type { MenuProps } from "antd";
-import { Dropdown, Space } from "antd";
+import { Dropdown, Space, MenuProps } from "antd";
 
 interface DropDownProps
 {
   dropdownTitle: string;
+  width: string;
+  backgroundColor: string;
 }
 
 const items: MenuProps["items"] = [
@@ -45,40 +46,43 @@ const items: MenuProps["items"] = [
 
 const CustomDropdown = ( props: DropDownProps ) =>
 {
-    const { dropdownTitle } = props;
+    const { dropdownTitle, width, backgroundColor } = props;
     
-    return (
-        <div>
-            <Dropdown
-                overlayStyle={{
-                    border: '.7px solid rgba(0, 0, 0, 0.3)',
-                    borderRadius: '6px',
-                    backgroundColor: '#EDF1F7',
-                    padding: '5px'
-                }}
-                menu={{ items }}>
-                <a onClick={( e ) => e.preventDefault()}>
-                    <Space
-                        style={{
-                            borderRadius: '6px',
-                            backgroundColor: '#EDF1F7',
-                            padding: '5px 8px'
-                        }}
-                    >
-                        <div
-                            style={{
-                                fontWeight: 600,
-                                color: '#7A828E',
-                            }}
-                        >
-                            {dropdownTitle}
-                        </div>
-                        <DownOutlined />
-                    </Space>
-                </a>
-            </Dropdown>
-        </div>
-    )
+  return (
+    <div>
+      <Dropdown
+        overlayStyle={{
+          border: '.7px solid rgba(0, 0, 0, 0.3)',
+          borderRadius: '6px',
+          backgroundColor: '#EDF1F7',
+          padding: '5px'
+        }}
+        menu={{ items }}>
+        <a onClick={( e ) => e.preventDefault()}>
+          <Space
+            style={{
+              borderRadius: '6px',
+              backgroundColor: backgroundColor,
+              padding: '5px 8px',
+              width: width,
+              justifyContent: 'space-between',
+              border: '.5px solid rgba(0, 0, 0, 0.3)',
+            }}
+          >
+            <div
+              style={{
+                fontWeight: 600,
+                color: '#7A828E',
+              }}
+            >
+              {dropdownTitle}
+            </div>
+            <DownOutlined />
+          </Space>
+        </a>
+      </Dropdown>
+    </div>
+  );
 };
 
 export default CustomDropdown;

@@ -3,11 +3,12 @@
 import CalibrationCard from "../calibrationCards/page";
 import CalibrationStateCard from "../calibrationStatesCards/page";
 import EmailCard from "../emailCards/page";
-import EmailCards from "../emailCards/page";
 import SettingsTab from "../../components/settingsTab/SettingdTab";
 import CustomInputField from "@/components/userActionBar/inputField";
 import CustomButton from "@/components/button";
 import { PlusOutlined } from '@ant-design/icons';
+import TaskDetailCard from "../taskCards/taskDetailsCard";
+import CustomDropdown from "@/components/dropdown";
 
 const users = [
     {
@@ -91,6 +92,15 @@ const page = () =>
                     <CustomButton status="pending" title={"Add User"} icon={<PlusOutlined className="text-black"/>}/>
                 </div>
             </div>
+            <div className="p-10 flex gap-5">
+                <TaskDetailCard title="Publish Items?" subTitle="Are you sure you want to publish the selected items?" buttonTyped={<CustomButton title={"Publish All"} />} buttonCancel={<CustomButton title={"Cancel"} />} dropdown={<CustomDropdown width="400px" dropdownTitle={"Select assignee"} backgroundColor={"white"} />} />
+                
+                <TaskDetailCard subTitle="single title" dropdown={<CustomInputField onSearch={() =>
+                {
+                    console.log('hello')
+                }} placeholder={"place holder"}/> } />
+            </div>
+
         </div>
     );
 

@@ -35,7 +35,7 @@ const CalibrationStateCard = (props: CalibrationStateCardProps) =>
                             }}
                         >{ title }</div>
                         <div>
-                            <CustomDropdown dropdownTitle={"This Year"} />
+                            <CustomDropdown width="" dropdownTitle={"This Year"} backgroundColor={"#EDF1F7"} />
                         </div>
                     </div>
 

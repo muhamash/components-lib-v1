@@ -27,7 +27,8 @@ const CustomButton = (props: CustomButton) =>
                 style={{
                     display: 'flex',
                     alignItems: 'center',
-            }}
+                    height: '35px'
+                }}
                 className={status}
                 icon={icon}
                 size={size}>
