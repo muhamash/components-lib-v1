@@ -2,7 +2,7 @@
 
 import { Card } from "antd";
 import React from "react";
-import CustomDropdown from "../../components/dropdown";
+import CustomDropdown from "../../components/Dropdown/dropdown";
 
 interface CalibrationStateCardProps{
     title: string;

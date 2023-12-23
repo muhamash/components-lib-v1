@@ -1,6 +1,6 @@
 'use client'
 
-import './css/button.css'
+import './button.css'
 import React, { useState } from "react";
 import { Button } from "antd";
 import type { SizeType } from "antd/es/config-provider/SizeContext";
@@ -9,13 +9,14 @@ interface CustomButton
 {
     title: string,
     icon?: React.ReactElement,
-    status?: string,
+    className?: string;
+    onClick?: () => void;
 }
 const CustomButton = (props: CustomButton) =>
 {
     
 
-    const { title, icon, status } = props;
+    const { title, icon, className, onClick } = props;
     const [ size, setSize ] = useState<SizeType>( "middle" );
     
     return (
@@ -25,12 +26,15 @@ const CustomButton = (props: CustomButton) =>
             }}>
         <Button
                 style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    height: '35px'
+                    // display: 'flex',
+                    // alignItems: 'center',
+                    height: '35px',
+                    // backgroundColor: {status},
+                    // color: '#545F71'
                 }}
-                className={status}
+                className={`flex items-center ${className}`}
                 icon={icon}
+                onClick={onClick}
                 size={size}>
                 {title}
             </Button>

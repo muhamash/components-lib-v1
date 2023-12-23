@@ -3,19 +3,19 @@
 import CalibrationCard from "../calibrationCards/page";
 import CalibrationStateCard from "../calibrationStatesCards/page";
 import EmailCard from "../emailCards/page";
-import SettingsTab from "../../components/settingsTab/SettingdTab";
+import SettingsTab from "../../components/SettingsTab/SettingdTab";
 import CustomInputField from "@/components/userActionBar/inputField";
-import CustomButton from "@/components/button";
+import CustomButton from "@/components/Button/Button";
 import { PlusOutlined } from '@ant-design/icons';
 import TaskDetailCard from "../taskCards/taskDetailsCard";
-import CustomDropdown from "@/components/dropdown";
+import CustomDropdown from "@/components/Dropdown/dropdown";
 
 const users = [
     {
         name: "muktar",
         id: "1",
         image: "/user.jpg",
-        status: 'pending',
+        status: 'completed',
     },
 
     // {
@@ -89,16 +89,57 @@ const page = () =>
                     }} placeholder={"search for machine"} />
                 </div>
                 <div>
-                    <CustomButton status="pending" title={"Add User"} icon={<PlusOutlined className="text-black"/>}/>
+                    <CustomButton
+                        className="bg-[#054F9F] text-white"
+                        title={"Add User"} icon={<PlusOutlined />}
+                    />
                 </div>
             </div>
             <div className="p-10 flex gap-5">
-                <TaskDetailCard title="Publish Items?" subTitle="Are you sure you want to publish the selected items?" buttonTyped={<CustomButton title={"Publish All"} />} buttonCancel={<CustomButton title={"Cancel"} />} dropdown={<CustomDropdown width="400px" dropdownTitle={"Select assignee"} backgroundColor={"white"} />} />
+                {/* <TaskDetailCard title="Publish Items?" subTitle="Are you sure you want to publish the selected items?" buttonTyped={<CustomButton title={"Publish All"} />} buttonCancel={<CustomButton title={"Cancel"} />} dropdown={<CustomDropdown width="400px" dropdownTitle={"Select assignee"} backgroundColor={"white"} />} /> */}
                 
-                <TaskDetailCard subTitle="single title" dropdown={<CustomInputField onSearch={() =>
+                {/* <TaskDetailCard subTitle="single title" dropdown={<CustomInputField onSearch={() =>
                 {
                     console.log('hello')
-                }} placeholder={"place holder"}/> } />
+                }} placeholder={"place holder"}/> } /> */}
+                
+                <TaskDetailCard
+                    title="Delete Items?"
+                    subTitle="Are you sure you want to delete the selected items permanently? Once deleted they won’t appear anymore anywhere"
+                    buttons={[
+                        {
+                            buttonTitle: 'Delete Permanently',
+                            buttonClassName: 'bg-[#E13333] text-[#FFFFFF]',
+                            onClick: () =>
+                            {
+                                console.log( 'Button clicked!' );
+                            },
+                        },
+                        {
+                            buttonTitle: 'Cancel',
+                            buttonClassName: 'hover:bg-[#EDF1F7]',
+                        }
+                    ]}
+                />
+                <TaskDetailCard
+                    // title="Delete Items?"
+                    subTitle="Machine Name"
+                    ReactElementProps={<CustomDropdown dropdownTitle={"Select machine"} width={"400px"} backgroundColor={""}/>}
+                    buttons={[
+                        {
+                            buttonTitle: 'Assign to Machine',
+                            buttonClassName: 'bg-[#259660] text-[#FFFFFF]',
+                            onClick: () =>
+                            {
+                                console.log( 'Button clicked!' );
+                            },
+                        },
+                        {
+                            buttonTitle: 'Cancel',
+                            buttonClassName: 'hover:bg-[#EDF1F7]',
+                        }
+                    ]}
+                />
             </div>
 
         </div>

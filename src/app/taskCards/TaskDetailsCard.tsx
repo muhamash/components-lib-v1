@@ -1,60 +1,68 @@
-import { Card, Space } from 'antd';
-import React from 'react'
+'use client'
 
-interface TaskDetailCardProps
-{
-    title?: string;
-    subTitle?: string;
-    dropdown?: React.ReactNode;
-    buttonTyped?: React.ReactElement;
-    buttonCancel?: React.ReactElement;
+import React from 'react';
+import CustomButton from '@/components/Button/Button';
+import { Card, Space } from 'antd';
+
+interface ButtonProps {
+  buttonTitle: string;
+  buttonIcon?: React.ReactElement;
+  buttonClassName?: string;
+  onClick?: () => void;
 }
 
-const TaskDetailCard = (props: TaskDetailCardProps) =>
-{
-    const { title, subTitle, dropdown, buttonCancel, buttonTyped } = props;
+interface TaskDetailCardProps {
+  title?: string;
+  subTitle?: string;
+  ReactElementProps?: React.ReactNode;
+  buttons?: ButtonProps[];
+}
+
+const TaskDetailCard = ({ title, subTitle, ReactElementProps, buttons = [] }: TaskDetailCardProps) => {
     return (
         <div>
             <Card
                 hoverable
-                style={{ width: '460px' }}
-                
-            >
+                style={{
+                    width: '460px'
+                }}>
                 <Space
                     direction='vertical'
-                    size={'middle'}
-                >
+                    size={'middle'}>
                     <Space
                         direction='vertical'
-                        size={'middle'}
-                    >
-                        <div className='text-[16px] font-[700]'>
-                            {title}
+                        size={'small'}>
+                        <div
+                            className='text-[16px] font-[700]'>{
+                                title}
                         </div>
                         <Space
-                            direction='vertical'
-                        >
+                            direction='vertical'>
                             <div
-                                className='text-[#545F71] text-[13px] font-[500]'>
-                                {subTitle}
+                                className='text-[#545F71] text-[13px] font-[500]'>{subTitle}
                             </div>
                             <div>
-                                {dropdown}
+                                {ReactElementProps}
                             </div>
                         </Space>
                     </Space>
-                    <Space>
-                        <div>
-                            {buttonTyped}
-                        </div>
-                        <div>
-                            {buttonCancel}
-                        </div>
-                    </Space>
-                </Space>  
+                    {buttons && buttons.length > 0 && (
+                        <Space>
+                            {buttons.map( ( button, index ) => (
+                                <CustomButton
+                                    key={index}
+                                    title={button.buttonTitle}
+                                    icon={button.buttonIcon}
+                                    className={button.buttonClassName}
+                                    onClick={button.onClick}
+                                />
+                            ) )}
+                        </Space>
+                    )}
+                </Space>
             </Card>
         </div>
-    )
+    );
 };
 
 export default TaskDetailCard;

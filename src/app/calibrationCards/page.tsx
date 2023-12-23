@@ -3,11 +3,11 @@
 import React from 'react';
 import {  Card, Space, } from 'antd';
 import styled from 'styled-components';
-import CalibrationCardButton from '../../components/button';
+import CalibrationCardButton from '../../components/Button/Button';
 import './customCard.css';
 import { AlertOutlined } from '@ant-design/icons';
 // import UserProfile from '@/components/userStack';
-import UserStack from '@/components/userStack';
+import UserStack from '@/components/UserStack/UserStack';
 
 
 
@@ -103,7 +103,10 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                     title={CardTitle}
                     description={CardDescription}
                 />
-                <CalibrationCardButton title='Start Calibration' status={users[ 0 ]?.status} icon={ <AlertOutlined />} />
+                <CalibrationCardButton
+                    title='Start Calibration'
+                    className={users[ 0 ]?.status}
+                    icon={<AlertOutlined />} />
             </Card>
         </div>
     );

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Avatar, Badge } from 'antd';
 import styled from 'styled-components';
-import CustomTooltip from './customTooltip';
-import UserAvatar from './userAvatar';
+import CustomTooltip from './Tooltip/CustomTooltip';
+import UserAvatar from './UserStack/UserAvatar';
 
 interface User {
     image: string;

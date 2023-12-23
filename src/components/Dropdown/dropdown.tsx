@@ -71,7 +71,7 @@ const CustomDropdown = ( props: DropDownProps ) =>
           >
             <div
               style={{
-                fontWeight: 600,
+                fontWeight: 500,
                 color: '#7A828E',
               }}
             >

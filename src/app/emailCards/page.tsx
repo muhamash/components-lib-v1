@@ -5,7 +5,7 @@ import { Card, Space } from "antd";
 import './page.css';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import ReadUser from "@/components/readUser";
-import UserStack from "@/components/userStack";
+import UserStack from "@/components/UserStack/UserStack";
 
 interface EmailCardProps
 {

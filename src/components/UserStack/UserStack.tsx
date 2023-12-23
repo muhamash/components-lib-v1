@@ -1,7 +1,7 @@
 import React from 'react';
-import RenderTooltipContent from './customTooltipContent';
-import CustomToolTip from './customTooltip';
-import UserAvatar from './userAvatar';
+import RenderTooltipContent from '../Tooltip/CustomTooltipContent';
+import CustomToolTip from '../Tooltip/CustomTooltip';
+import UserAvatar from './UserAvatar';
 import { Avatar } from 'antd';
 
 interface UserStackProps {
