@@ -82,7 +82,7 @@ const EmailCard = ( props: EmailCardProps ) =>
                                 size={'large'}
                             >
                                 <div>
-                                    <ReadUser users={users} />
+                                    <UserStack users={users} />
                                 </div>
                                 <button onClick={() =>
                                 {

@@ -1,0 +1,33 @@
+/* SettingsTab.css */
+
+.settings-tab-container {
+  width: 100%;
+}
+
+.custom-tabs .ant-tabs-ink-bar {
+  transition: transform 0.3s ease;
+}
+
+.custom-tabs .ant-tabs-tab:hover {
+  color: #1890ff;
+}
+
+.custom-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #1890ff;
+}
+
+.custom-tabs .ant-tabs-ink-bar {
+  background-color: #1890ff !important;
+}
+
+.custom-tabs .ant-tabs-tab-active:hover .ant-tabs-ink-bar {
+  transform: translate(0, 0) !important;
+}
+
+.custom-tabs .ant-tabs-tab:hover .ant-tabs-ink-bar {
+  transform: translate(0, 100%) !important;
+}
+
+.tab-label {
+  display: inline-block;
+}
