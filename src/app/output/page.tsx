@@ -74,6 +74,14 @@ const page = () =>
                     CardDescription={"F-7.5.13-59 EX-HS-2L Intelli-Drill Router"}
                     CustomDate={currentDate}
                     width="350px"
+                    buttons={[
+                        {
+                            ButtonTitle: 'Start Calibration',
+                            ButtonClassName: `${ users[ 2 ].status }`,
+                            
+                        },
+
+                    ]}
                 />
                 <CalibrationStateCard
                     title={"Calibration Title"}
@@ -103,6 +111,7 @@ const page = () =>
                         className="bg-[#054F9F] text-white"
                         title={"Add User"}
                         icon={<PlusOutlined />}
+                        onClick={()=> console.log('add user')}
                     />
                 </div>
             </div>
@@ -123,12 +132,16 @@ const page = () =>
                             buttonClassName: 'bg-[#E13333] text-[#FFFFFF]',
                             onClick: () =>
                             {
-                                console.log( 'Button clicked!' );
+                                console.log( 'ok Button clicked!' );
                             },
                         },
                         {
                             buttonTitle: 'Cancel',
                             buttonClassName: 'hover:bg-[#EDF1F7]',
+                            onClick: () =>
+                            {
+                                console.log('cancel button')
+                            }
                         }
                     ]}
                 />
@@ -157,7 +170,30 @@ const page = () =>
                         }
                     ]}
                 />
+
+                {/* <TaskDetailCard
+
+                /> */}
+
+                <CalibrationCard
+                    users={users}
+
+                    CardTitle={"Machine Name"}
+                    CardDescription={"Sensor Name Here "}
+                    CustomDate={currentDate}
+                    width={"285px"}
+                    buttons={[
+                        {
+                            ButtonTitle: 'Start Calibration',
+                            ButtonClassName: 'bg-[#054F9F] text-[#FFFFFF] shadow',
+                            
+                       },
+
+                    ]}
+
+                />
             </div>
+            
 
         </div>
     );

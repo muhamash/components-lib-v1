@@ -22,7 +22,7 @@ const CustomButton = (props: CustomButton) =>
     return (
         <div
             style={{
-                padding: '10px 0px',
+                padding: '5px 0px',
             }}>
         <Button
                 style={{

@@ -39,12 +39,20 @@ interface CalibrationCardProps
         id: string;
         image: string;
         status: string;
-    } [],
+    }[],
+    buttons?: {
+        // length: number;
+        // map ( arg0: ( button: any, index: any ) => any ): React.ReactNode;
+        ButtonClicked?: () => void;
+        ButtonTitle: string;
+        ButtonClassName?: string;
+        ButtonIcon?: React.ReactElement;
+    }[]
 };
 
 const CalibrationCard = ( props: CalibrationCardProps ) =>
 {
-    const { CardTitle, CardDescription, CustomDate, width, users = [] } = props;
+    const { CardTitle, CardDescription, CustomDate, width, buttons, users = [] } = props;
 
     return (
         <div>
@@ -64,15 +72,15 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                                 justifyContent: 'flex-start',
                                 padding: '0px 10px'
                             }}
-                            // className='customCardUser'
+                        // className='customCardUser'
                         >
                             <Space
                                 align='center'
                                 size={'large'}
                             >
                                 <div>
-                                <UserStack  users={users}/>
-                            </div>
+                                    <UserStack users={users} />
+                                </div>
                             </Space>
                         </div>
                     </span>,
@@ -103,10 +111,21 @@ const CalibrationCard = ( props: CalibrationCardProps ) =>
                     title={CardTitle}
                     description={CardDescription}
                 />
-                <CalibrationCardButton
-                    title='Start Calibration'
-                    className={users[ 0 ]?.status}
-                    icon={<AlertOutlined />} />
+                {buttons && buttons.length > 0 && (
+                    <div
+                    className='flex flex-col gap-0 py-2'
+                    >
+                        {buttons.map( ( button, index ) => (
+                            <CalibrationCardButton
+                                key={index}
+                                title={button.ButtonTitle}
+                                icon={button.ButtonIcon}
+                                className={button.ButtonClassName}
+                                onClick={button.ButtonClicked}
+                            />
+                        ) )}
+                    </div>
+                )}
             </Card>
         </div>
     );
