@@ -1,13 +1,13 @@
 'use client'
 
-import CalibrationCard from "../calibrationCards/page";
-import CalibrationStateCard from "../calibrationStatesCards/page";
-import EmailCard from "../emailCards/page";
+import CalibrationCard from "../CalibrationCards/page";
+import CalibrationStateCard from "../CalibrationStatesCards/page";
+import EmailCard from "../EmailCards/page";
 import SettingsTab from "../../components/SettingsTab/SettingdTab";
 import CustomInputField from "@/components/userActionBar/inputField";
 import CustomButton from "@/components/Button/Button";
 import { PlusOutlined } from '@ant-design/icons';
-import TaskDetailCard from "../taskCards/taskDetailsCard";
+import TaskDetailCard from "../TaskCards/taskDetailsCard";
 import CustomDropdown from "@/components/Dropdown/dropdown";
 
 const users = [
@@ -75,23 +75,34 @@ const page = () =>
                     CustomDate={currentDate}
                     width="350px"
                 />
-                <CalibrationStateCard title={"Calibration Title"} amount={30} element={"Nextjs"} />
-                <EmailCard head={"E"} title={"Executive Directors"} emailCount={'30 Emails'} date={currentDate} users={users} />
+                <CalibrationStateCard
+                    title={"Calibration Title"}
+                    amount={30}
+                    element={"Nextjs"} />
+                <EmailCard
+                    head={"E"}
+                    title={"Executive Directors"}
+                    emailCount={'30 Emails'}
+                    date={currentDate}
+                    users={users} />
             </div>
             <div className="items-center py-10">
                 <SettingsTab />
             </div>
             <div className="flex justify-between gap-10 items-center px-10 w-[400px]">
                 <div>
-                    <CustomInputField onSearch={() =>
+                    <CustomInputField
+                        onSearch={() =>
                     {
                         console.log( 'search' )
-                    }} placeholder={"search for machine"} />
+                    }}
+                    placeholder={"search for machine"} />
                 </div>
                 <div>
                     <CustomButton
                         className="bg-[#054F9F] text-white"
-                        title={"Add User"} icon={<PlusOutlined />}
+                        title={"Add User"}
+                        icon={<PlusOutlined />}
                     />
                 </div>
             </div>
@@ -124,7 +135,12 @@ const page = () =>
                 <TaskDetailCard
                     // title="Delete Items?"
                     subTitle="Machine Name"
-                    ReactElementProps={<CustomDropdown dropdownTitle={"Select machine"} width={"400px"} backgroundColor={""}/>}
+                    ReactElementProps={
+                        <CustomDropdown
+                            dropdownTitle={"Select machine"}
+                            width={"400px"}
+                            backgroundColor={""}
+                        />}
                     buttons={[
                         {
                             buttonTitle: 'Assign to Machine',
@@ -134,6 +150,7 @@ const page = () =>
                                 console.log( 'Button clicked!' );
                             },
                         },
+
                         {
                             buttonTitle: 'Cancel',
                             buttonClassName: 'hover:bg-[#EDF1F7]',
