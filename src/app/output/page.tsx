@@ -115,7 +115,7 @@ const page = () =>
                     />
                 </div>
             </div>
-            <div className="p-10 flex gap-5">
+            <div className="p-10 flex gap-5 flex-wrap">
                 {/* <TaskDetailCard title="Publish Items?" subTitle="Are you sure you want to publish the selected items?" buttonTyped={<CustomButton title={"Publish All"} />} buttonCancel={<CustomButton title={"Cancel"} />} dropdown={<CustomDropdown width="400px" dropdownTitle={"Select assignee"} backgroundColor={"white"} />} /> */}
                 
                 {/* <TaskDetailCard subTitle="single title" dropdown={<CustomInputField onSearch={() =>
@@ -171,9 +171,17 @@ const page = () =>
                     ]}
                 />
 
-                {/* <TaskDetailCard
-
-                /> */}
+                <TaskDetailCard
+                    title="F-7.5.13-09 Multi-Station # 7"
+                    CalibrationStatus="Calibration Due"
+                    CalibrationStatusClassName='text-red-700'
+                    buttons={[
+                        {
+                            buttonTitle: 'Mark as Completed',
+                            buttonClassName: 'bg-[#054F9F] text-[#FFFFFF]' 
+                        }
+                    ]}
+                />
 
                 <CalibrationCard
                     users={users}
@@ -182,6 +190,7 @@ const page = () =>
                     CardDescription={"Sensor Name Here "}
                     CustomDate={currentDate}
                     width={"285px"}
+                    
                     buttons={[
                         {
                             ButtonTitle: 'Start Calibration',
@@ -190,11 +199,22 @@ const page = () =>
                        },
 
                     ]}
-
                 />
+                
+                <TaskDetailCard
+                    title="F-7.5.13-09 Multi-Station # 7"
+                    // CalibrationStatus="Calibration Due" 
+                    // CalibrationStatusClassName='text-red-700'
+                    Date={currentDate}
+                    buttons={[
+                        {
+                            buttonTitle: 'Mark as Completed',
+                            buttonClassName: 'bg-[#054F9F] text-[#FFFFFF]' 
+                        }
+                    ]}
+                />
+                
             </div>
-            
-
         </div>
     );
 

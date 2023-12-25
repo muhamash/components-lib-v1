@@ -28,7 +28,7 @@ const CustomButton = (props: CustomButton) =>
                 style={{
                     // display: 'flex',
                     // alignItems: 'center',
-                    height: '35px',
+                    height: '37px',
                     // backgroundColor: {status},
                     // color: '#545F71'
                 }}
