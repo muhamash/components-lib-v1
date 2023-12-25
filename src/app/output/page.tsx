@@ -9,6 +9,7 @@ import CustomButton from "@/components/Button/Button";
 import { PlusOutlined } from '@ant-design/icons';
 import TaskDetailCard from "../TaskCards/taskDetailsCard";
 import CustomDropdown from "@/components/Dropdown/dropdown";
+import CertificationCard from "../CertificationCard/CertificationCard";
 
 const users = [
     {
@@ -214,6 +215,15 @@ const page = () =>
                     ]}
                 />
                 
+                <CertificationCard
+                    width={"286px"}
+                    coverImage={<img
+                        className="w-[286px] h-[138px] p-[6px] rounded-t-[6px]"
+                        src="./user.jpg" alt="cover photo" />
+                    }
+                    fileName={"TXSUI"}
+                    sensorName={"F-7.5.13-38 Deburr"}
+                />
             </div>
         </div>
     );
