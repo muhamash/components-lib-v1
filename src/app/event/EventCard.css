@@ -1,0 +1,15 @@
+/* EventCard.css */
+
+.hidden-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.event-card:hover .hidden-content {
+    opacity: 1;
+}
+
+.event-card:hover .visible-content{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}

@@ -1,0 +1,4 @@
+.group-hover .hidden {
+  opacity: 1 !important; /* Display the hidden element by changing opacity */
+  transition: opacity 1s ease-in-out !important; /* Apply transition to opacity */
+}
