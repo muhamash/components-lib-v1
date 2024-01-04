@@ -222,7 +222,7 @@ const page = () =>
                         src="./user.jpg" alt="cover photo" />}
                     fileName={"TXSUI"}
                     sensorName={"F-7.5.13-38 Deburr"}
-                    fileFormat="PDF"
+                    fileFormat="excel"
                     fileSize={"152 KB"} />
             </div>
         </div>
