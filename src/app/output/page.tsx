@@ -17,6 +17,7 @@ const users = [
         id: "1",
         image: "/user.jpg",
         status: 'completed',
+        machineTitle: ''
     },
 
     // {
@@ -60,7 +61,6 @@ const users = [
         status: 'completed',
     },
 ];
-
 
 const page = () =>
 {
@@ -219,11 +219,11 @@ const page = () =>
                     width={"286px"}
                     coverImage={<img
                         className="w-[286px] h-[138px] p-[6px] rounded-t-[6px]"
-                        src="./user.jpg" alt="cover photo" />
-                    }
+                        src="./user.jpg" alt="cover photo" />}
                     fileName={"TXSUI"}
                     sensorName={"F-7.5.13-38 Deburr"}
-                />
+                    fileFormat="PDF"
+                    fileSize={"152 KB"} />
             </div>
         </div>
     );
