@@ -15,7 +15,7 @@ const IconGenerator = ( props:IconGeneratorProps ) =>
         switch ( format.toLowerCase() )
         {   
             case "excel":
-                return <FileExcelOutlined/>
+                return <FileExcelOutlined />
             case "pdf":
                 return <FilePdfOutlined className="text-lg"/>;
             case "jpg":
