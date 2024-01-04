@@ -1,5 +1,5 @@
 import React from "react";
-import { FilePdfOutlined, FileImageOutlined, FileOutlined, FileExcelOutlined } from '@ant-design/icons';
+import { FilePdfFilled, FileImageOutlined, FileOutlined, FileExcelFilled } from '@ant-design/icons';
 
 interface IconGeneratorProps {
     fileFormat: string;
@@ -15,9 +15,9 @@ const IconGenerator = ( props:IconGeneratorProps ) =>
         switch ( format.toLowerCase() )
         {   
             case "excel":
-                return <FileExcelOutlined />
+                return <FileExcelFilled className="text-lg" style={{ color: 'green' }}/>
             case "pdf":
-                return <FilePdfOutlined className="text-lg"/>;
+                return <FilePdfFilled className="text-lg" style={{ color: 'red' }}/>;
             case "jpg":
             case "jpeg":
             case "png":
